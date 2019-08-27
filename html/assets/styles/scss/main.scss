@@ -1,0 +1,843 @@
+/*
+============================================
+============================================
+* author: Los de siempre
+* 
+============================================
+============================================
+*/
+@import 'fonts';
+@import 'variables';
+@import 'reset';
+@import 'modules';
+@import 'mixins';
+
+
+body{
+	font-family: 'Alegreya', sans-serif;
+	font-size: 16px;
+	scroll-behavior: smooth;
+	color:$grey-900;
+	background: $grey-50;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transition:all 0.5s ease 0s;
+}
+
+
+h1{
+	font-size: 64px;
+	font-family: 'Alegreya Sans';
+
+}
+
+h2{
+	font-family: 'Alegreya Sans';
+	font-size: 48px;
+	margin-bottom: 13px;
+	letter-spacing: -.0625rem;
+}
+
+h3{
+	font-size: 40px;
+	font-family: 'Alegreya Sans';
+	font-weight: 900;
+}
+
+h4{
+	font-size: 36px;
+	font-family: 'Alegreya Sans';
+}
+
+h5 	{
+	font-size: 28px;
+	
+}
+h6 {
+	font-size: 24px;
+	font-family: 'Alegreya';
+	font-style: italic;
+}
+
+p{
+	font-family: 'Alegreya';
+	font-size: 1.2em;
+	line-height:  1.5em;
+}
+
+small{
+	font-size: 14px
+}
+
+section:nth-of-type(odd){
+	background:$grey-100;
+}
+
+
+/*
+══════════════════════════════════════════
+	 __    __   _______     ___       _______   _______ .______
+	|  |  |  | |   ____|   /   \     |       \ |   ____||   _  \
+	|  |__|  | |  |__     /  ^  \    |  .--.  ||  |__   |  |_)  |
+	|   __   | |   __|   /  /_\  \   |  |  |  ||   __|  |      /
+	|  |  |  | |  |____ /  _____  \  |  '--'  ||  |____ |  |\  \----.
+	|__|  |__| |_______/__/     \__\ |_______/ |_______|| _| `._____|
+	
+══════════════════════════════════════════
+*/
+
+
+.header{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding:16px 32px;
+	position: -webkit-sticky;
+	position:sticky;
+	top:0px;
+	z-index: 200;
+	
+	&__logo{
+		width: 32px;
+
+		img{
+			max-height: 36px;
+		
+			vertical-align: middle;
+		}
+	}
+	&__nav{
+		justify-self:end;
+		align-items: center;
+		display: flex;
+		width: 100px;
+		justify-content: space-between;
+		overflow: hidden;
+		
+		ul{
+			position: fixed;
+			background:white;
+			right: 0px;
+			top:0px;
+			width:280px;
+			height: 100vh;
+			transform: translateX(900px);
+			transition: 0.5s ease all;
+			box-shadow:1px 0px 24px rgba(0, 0, 0, 0.15);
+			padding:64px;
+			text-align: left;
+			li{
+				margin-bottom: 16px;
+			}
+		}
+	}
+	&__icon{
+		&--close{
+			display: none !important;
+		}
+	}
+	&__toggler{
+		margin-left: 15px;
+	}
+	&--home{
+		padding:32px 32px;
+	}
+
+	&--sticky {
+		background: $grey-100;
+	}
+
+
+	&--toggled{
+		.header__nav ul{
+			display: block;
+			transform: translateX(0px);
+		}
+		.header__icon{
+			&--toggle{
+				display: none;
+			}
+			&--close{
+				display: block !important;
+				z-index: 343242343;
+				position:relative;
+			}
+		}
+
+	}
+	
+
+}
+
+
+
+.bighero{
+	display: grid;
+	grid-template-columns:1fr 1fr;
+	grid-template-rows: auto;
+	overflow: hidden;
+	padding: 52px;
+	grid-template-areas: "texto imagen";
+	height: calc(100vh - 64px);
+	background:url(../../img/banner01.jpg) center right;
+	
+    background-repeat: repeat;
+    background-size: auto;
+	background-size: 80%;
+	background-repeat: no-repeat;
+
+	&__info{
+		grid-area: texto;
+		font-size: 24px;
+		align-self: center;
+	}
+	&__title{
+		font-family: 'Alegreya Sans', sans-serif;
+		line-height: 1.08;
+		font-weight: 800;
+		margin-bottom: 34px;
+
+	}
+	&__desc{
+		font-family: 'Alegreya', sans-serif;
+		
+	}
+
+	&__figure{
+		grid-area:imagen;
+
+
+	}
+
+}
+
+/*
+══════════════════════════════════════════
+	.______   .______        ______    _______   __    __    ______ .___________.  ______        _______.
+	|   _  \  |   _  \      /  __  \  |       \ |  |  |  |  /      ||           | /  __  \      /       |
+	|  |_)  | |  |_)  |    |  |  |  | |  .--.  ||  |  |  | |  ,----'`---|  |----`|  |  |  |    |   (----`
+	|   ___/  |      /     |  |  |  | |  |  |  ||  |  |  | |  |         |  |     |  |  |  |     \   \
+	|  |      |  |\  \----.|  `--'  | |  '--'  ||  `--'  | |  `----.    |  |     |  `--'  | .----)   |
+	| _|      | _| `._____| \______/  |_______/  \______/   \______|    |__|      \______/  |_______/
+	
+══════════════════════════════════════════
+*/
+
+.prod{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	grid-template-areas: "info slider slider";
+	column-gap: 24px;
+
+	&__info{
+		grid-area:info;
+		align-self: center;
+		padding: 0px 54px;
+		p{
+			padding-bottom: 15px;
+		}
+		
+	}
+	&__carousel{
+
+		grid-area:slider;
+		overflow: hidden;
+		display: block;
+		position:relative;
+
+	}
+	
+	&__item{
+		padding: 0px 10px 0px 0px;
+	}
+	&__arrow{
+		width: 29px;
+		height: 76.9%;
+		/*background: rgba(255,255,255,0.7);*/
+		position: absolute;
+		display: flex;
+		align-items: center;
+		z-index: 34;
+		cursor: pointer;
+		top:0;
+		transition: 0.5s ease all;
+		transform: translateY(24px);
+		&:hover{
+			/*background: rgba(255,255,255,0.3);*/
+		}
+		&--next{
+			right: 0px;
+		}
+		&--prev{
+			left:0px;
+		}
+	}
+	&__figure{
+		transition: all .2s ease-in-out;
+		&:hover{
+			transform: scale(1.01);
+		}
+		img{
+			object-fit: cover;
+			width: 400px;
+			height: 400px;
+		}
+	}
+	&__figcaption{
+		text-align: center;
+		font-family: "Alegreya Sans";
+		margin-top: 8px;
+		color:rgb(51, 51, 51);
+		h3{
+			font-size: 18px;
+			font-weight: normal;
+		}
+	}
+	&__price{
+		color:$mediumneutral;
+	}
+	&__feature{
+		font-family: "Alegreya Sans";
+		max-width: 400px;
+		margin:8px 0 16px 0;
+		strong{
+			font-family: "Alegreya Sans SC";
+		}
+		li{
+			padding: 8px 0;
+			&:not(:last-child){
+				border-bottom:1px solid $grey-200;
+			}
+			&:last-child{
+				font-variant-numeric: tabular-nums;
+			}
+		}
+	}
+}
+
+.sprod{
+	display: grid;
+	grid-template-columns:1fr 1fr;
+	grid-template-rows: auto;
+	column-gap: 24px;
+	align-items: center;
+	grid-template-areas:"slider texto"
+	"slider texto";
+
+	&__items-wrp{
+		grid-area: slider;
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		width: 100%;
+		
+	}
+	&__items{
+		overflow: hidden;
+		min-width: 200px;
+		margin: 0 auto;
+		width: auto;
+		img{
+			width: 100%;
+		}
+		figure{
+			overflow: hidden;
+		}
+	}
+
+	&__thumb{
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		max-width: 550px;
+		width: auto;
+		&-item{
+			padding: 10px;
+			flex-basis: 40%;
+		}
+	}
+	&__nav{
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		margin: 0 auto;
+
+	}
+	&__desc{
+		grid-area: texto;
+		
+	}
+	&__items-wrp{
+		max-width: 580px;
+
+	}
+}
+
+
+
+
+.allprods{
+	&__header{
+		
+		
+	}
+	&__nav{
+		display: flex;
+		justify-content: center;
+		font-family: "alegreya sans";
+		color:$grey-600;
+		font-size: 18px;
+		padding:24px 0;
+		position:sticky;
+		position: -webkit-sticky;
+		top:0px;
+		z-index: 200;
+		li{
+			display: inline-block;
+			padding: 0px 20px;
+			a{
+				display: block;
+				padding: 4px 8px;
+				transition: 0.1s ease all;
+				&:hover{
+					background:hsl(24,100,78);
+					color:hsl(24,100,58);
+					border-radius:4px;
+				}
+			}
+			
+			&.active{
+				background:hsl(24,100,78);
+				color:hsl(24,100,48);
+				border-radius:4px;
+				font-weight: 500;
+			}
+
+		}
+	}
+	&__desc{
+		text-align: center;
+		max-width: 40%;
+		margin:0 auto;
+		margin-bottom: 32px;
+
+
+		h2{
+			letter-spacing: 0.2px;
+		}
+	}
+
+	&__items{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 24px;
+		padding-bottom: 50px;
+		background:$grey-100;
+		border-top:1px solid rgba(0,0,0,0.05);
+	}
+
+	&__figure{
+		font-family: "Alegreya Sans";
+		position:relative;
+
+		img:hover{
+			transform: scale(1.01);
+			transition: 1s ease all;
+		}
+		.btn{
+			position: absolute;
+			bottom: 3px;
+			right: 0;
+			opacity: 0;
+			transform: translateY(8px);
+			transition: all 0.4s ease-out;
+		}
+		&:hover{
+			.btn, .cantidad{
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		&--agotado:after{
+			font-family: "Alegreya Sans SC";
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			position:absolute;
+			content:" agotado";
+			border-radius:4px;
+			background:rgba(0,0,0,0.1);
+			color:$grey-50;
+			top:8px;
+			right: 8px;
+			padding: 4px 16px;
+			font-size: 14px;
+
+		}
+	}
+	
+
+
+}
+
+
+/*
+══════════════════════════════════════════
+	.______   .______        ______     ______  _______     _______.     _______.
+	|   _  \  |   _  \      /  __  \   /      ||   ____|   /       |    /       |
+	|  |_)  | |  |_)  |    |  |  |  | |  ,----'|  |__     |   (----`   |   (----`
+	|   ___/  |      /     |  |  |  | |  |     |   __|     \   \        \   \
+	|  |      |  |\  \----.|  `--'  | |  `----.|  |____.----)   |   .----)   |
+	| _|      | _| `._____| \______/   \______||_______|_______/    |_______/
+	
+══════════════════════════════════════════
+*/
+
+.process{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 36px;
+	text-align: center;
+	h4{
+		font-size: 18px;
+		padding-bottom: 8px;
+		font-weight: 600;
+	}
+
+	&.block{
+		padding: 100px;
+	}
+	figcaption{
+		margin-top: 16px;
+	}
+	img{max-width: 280px; max-height: 200px}
+	p{
+		font-size: 18px;
+		
+	}
+}
+
+/*
+══════════════════════════════════════════
+	Genéricos
+══════════════════════════════════════════
+*/
+
+.text-img{
+	&__fig{
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	&__desc{
+		h1{	
+			font-weight: 700;
+			line-height: 1;
+			color:$grey-900;
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+		p{
+			font-size: 24px;
+			color:$grey-500;
+		}
+	}
+	.btn--comprar{		
+		margin-top: 32px;
+	}
+}
+.autor{
+	text-align: center;
+	&__avatar{
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		position: relative;
+		border: solid 8px #F76200;
+		overflow: hidden;
+		display: inline-block;
+		margin-bottom: 20px;
+		img{
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			position: absolute;
+			-o-object-fit: cover;
+			object-fit: cover;
+		}
+	}
+	&__name{
+		font-family: 'Alegreya Sans SC', sans-serif;
+		font-weight: bold;
+		font-size: 0.8em;
+		color: #999999;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+	}
+	p{
+		font-size: 1.4em;
+		color: #999999;
+	}
+
+}
+
+.cantidad{
+	position: relative;
+	color: white;
+	display: inline-block;
+	margin-top: 10px;
+	transition: ease all 1s;
+	
+
+	&__anadir{
+		background-color: #F76200;
+		border-radius: 5px;
+		padding: 8px 70px;
+		color: white;
+		line-height: 1;
+		vertical-align: middle;
+		font-family: Alegreya Sans;
+		text-transform: uppercase;
+		font-weight: 300;
+		transition: ease all 1s;
+		&:hover{
+			background-color:#FF751A;
+			cursor: pointer;
+			
+		}
+		span{
+			font-size: 1.4em;
+			margin-left: 5px;
+			font-variant-numeric: tabular-nums;
+			font-weight: 600;
+		}	
+		
+	}
+	&__button{
+		position: absolute;
+		top: 0;
+		padding: 5px;
+		height: 100%;
+		background-color: rgba(white,0.2);
+		cursor: pointer;
+		transition: 1s ease all;
+		color:white;
+		&:hover{
+			background-color: rgba(white,0.1);
+
+		}
+		&--menos{
+			border-radius: 5px 0 0 5px;
+			left: 0;
+			padding: 0 10px;
+		}
+		&--mas{
+			border-radius: 0 5px 5px  0;
+			right: 0;
+			padding: 0 10px;
+		}
+		i{
+			vertical-align: middle;
+		}
+	}
+}
+.modalproducto{
+	position: fixed;
+	z-index: 12098786;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(black, .24);
+	display: none;
+	table{
+		width: 100%;
+	}
+
+	&__cont{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px;
+	}
+	&__space{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	&__wrp{
+		border-radius: 20px;
+		box-shadow: 0 2px 22px 0 rgba(0,0,0,0.18);
+		border-radius: 9px;
+		border: 0 solid #EBEBEB;
+		color: #333333;
+		letter-spacing: 0;
+		text-align: center;
+		background: rgba(51,51,51,0.35);
+		background-color: white;
+		width: 100%;
+		max-width: 600px;
+		padding: 20px;
+		position: relative;
+		z-index: 19038839;
+	}
+	&__head{
+		border-bottom: solid 1px #EBEBEB;
+		position:relative;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		h3{
+			font-size: 1.2em;
+			font-weight: normal;
+		}
+	}
+	&__close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		cursor: pointer
+	}
+	&__desc{
+		padding: 10px 0;
+	}
+	table{
+		margin-bottom: 20px;
+	}
+	td{
+		&:nth-of-type(1){
+			font-family: "Alegreya SC";
+			color: rgba(51,51,51,0.70);
+
+		}
+	}
+}
+
+
+
+/*
+ 	     _______. __  .__   __.   _______  __       _______
+ 	    /       ||  | |  \ |  |  /  _____||  |     |   ____|
+ 	   |   (----`|  | |   \|  | |  |  __  |  |     |  |__
+ 	    \   \    |  | |  . `  | |  | |_ | |  |     |   __|
+ 	.----)   |   |  | |  |\   | |  |__| | |  `----.|  |____
+ 	|_______/    |__| |__| \__|  \______| |_______||_______|
+ 	
+ 	*/
+
+ 	.single{
+ 		display: flex;
+ 		justify-content: space-between;
+ 		align-items: flex-start;
+ 		&__thumbs{
+ 			position: -webkit-sticky;
+ 			position: sticky;
+ 			top: 8rem;
+ 			width: 9%;
+ 			height: 100vh;
+
+ 			figure{
+ 				width: 100%;
+ 				height: auto;
+
+ 				&.active img{
+ 					border:1px solid black;
+ 					width: 100%;
+ 					height: auto;
+ 				}
+ 			}
+ 		}
+ 		&__slideshow{
+ 			position: -webkit-sticky;
+ 			position: sticky;
+ 			width: 50%;
+ 			figure, img{
+ 				width: 100%
+ 			}
+ 			figure:last-of-type{
+ 				margin-bottom: 300px;
+ 			}
+ 		}
+ 		&__desc{
+ 			width: 34%;
+ 			position:sticky;
+ 			position: -webkit-sticky;
+ 			top: 8rem;
+ 		}
+ 		
+ 		&__info{
+ 			padding:0px !important;
+ 			
+ 		}
+ 		.sprod{
+ 			display: none;
+ 		}
+ 	}
+
+
+
+/*
+══════════════════════════════════════════
+	 _______   ______     ______   .___________. _______ .______
+	|   ____| /  __  \   /  __  \  |           ||   ____||   _  \
+	|  |__   |  |  |  | |  |  |  | `---|  |----`|  |__   |  |_)  |
+	|   __|  |  |  |  | |  |  |  |     |  |     |   __|  |      /
+	|  |     |  `--'  | |  `--'  |     |  |     |  |____ |  |\  \----.
+	|__|      \______/   \______/      |__|     |_______|| _| `._____|
+	
+══════════════════════════════════════════
+*/
+
+.footer{
+	font-family: 'Alegreya Sans';
+
+	strong{font-weight: 700}
+	a:hover{
+		color:$primary;
+	}
+
+	&__sub1{
+		width: 100%;
+		padding:54px;
+		font-size: 14px;
+		line-height: 1.3rem;
+		color:$grey-500;
+		border-top:1px solid $grey-100;
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap; 
+		ul{ padding: 0px; }
+	}
+
+	&__pagopar{
+		max-width: 150px;
+	}
+
+	&__sub2{
+		font-family: 'Alegreya Sans SC';
+		font-weight: 100;
+		text-transform: lowercase;
+		flex: 1 100%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		border-top: 1px solid $grey-200;
+		color:rgba(0, 0, 0, 0.4);
+		font-size: 16px;
+		padding: 24px 0;
+
+		li{
+			padding: 16px ;
+		}
+	}
+}
+
+
+

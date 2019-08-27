@@ -1,0 +1,131 @@
+.block{
+	padding:112px 54px;
+	&--topbottom{
+		padding:100px 0px;
+	}
+	&--sides{
+		padding:0 54px;
+	}
+	&--half{
+		padding:54px;
+	}
+}
+.icon{
+	display: inline-block;
+	vertical-align: middle;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	
+	
+	&--search{
+		width: 18px;
+		height: 18px;
+		background-image: url(../../img/icon--search-black.svg);
+		cursor: pointer;	
+		
+		/*&:hover{ @extend .hover;}*/
+		
+	}
+	&--cart{
+		width: 19px;
+		height: 19px;
+		background-image: url(../../img/icon--cart-black.svg);	
+		cursor: pointer;
+		/*&:hover{ @extend .hover;}*/
+
+	}
+	&--toggle{
+		width: 20px;
+		height: 20px;
+		background-image: url(../../img/icon--toggle.svg);
+		cursor: pointer;
+	}
+	&--close{
+		width: 26px;
+		height: 26px;
+	}
+}
+
+
+
+.btn {
+	border-radius:3px;
+	display: inline-block;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-weight: bold;
+	transition: all .2s ease-in-out;
+	opacity: 0.9;
+	&:hover{
+		transform: scale(1.05);
+		opacity: 1;
+	}
+	&--primary{
+		padding: 8px 28px;
+		background: $primary;
+		color:white;
+		&hover{
+			color:white;
+		}
+	}
+	&--comprar{
+		width: 100%;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: white;
+		border-radius: 5px;
+		background-color: #F76200;
+	}
+}
+
+.bg{
+	&--bgrey{background: $bgrey-400}
+	&--grey{background: $grey-100;}
+	&--light{background: $light;}
+	&--white{background: white;}
+	&--border{border-bottom:$grey-100;}
+}
+
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+}
+
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+

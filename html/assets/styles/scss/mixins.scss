@@ -1,0 +1,21 @@
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin transition($elemento, $tiempo) {
+	transition-property: $elemento;
+	transition-timing-function: ease;
+	transition-duration: $tiempo;
+}
+
+.hover{
+		filter:  invert(100) sepia(0) hue-rotate(100deg);
+		transition: 0.4s ease all;
+	}
